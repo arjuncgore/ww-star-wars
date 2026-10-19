@@ -42,7 +42,7 @@ local M = {}
 local run_id = 0
 local text_obj = nil
 
-local handle_scroll = function(cfg)
+M.handle_scroll = function(cfg)
     if text_obj then
         run_id = run_id + 1
         if text_obj then
@@ -87,7 +87,7 @@ M.setup = function(config, cfg)
     cfg = cfg or example_cfg
 
     config.actions[cfg.startstop] = function()
-        handle_scroll(cfg)
+        M.handle_scroll(cfg)
     end
 end
 
